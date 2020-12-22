@@ -33,6 +33,23 @@ alias lll="ls -lah"
 alias la="ls -a"
 alias lla="ls -lah"
 
+alias vim="nvim"
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+source ${HOME}/.profile
+
+# If running from tty1 start sway
+if [ "$(tty)" = "/dev/tty1" ]; then
+    exec sway
+fi
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
