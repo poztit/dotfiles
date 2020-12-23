@@ -1,0 +1,5 @@
+# Dotfiles gitignore
+
+## Neovim
+nvim/.config/nvim/plugged
+.netrwhist
