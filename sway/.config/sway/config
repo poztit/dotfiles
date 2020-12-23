@@ -86,8 +86,7 @@ gaps outer 0
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d       exec wofi --show run
-    bindsym $mod+Shift+d exec wofi --show drun
+    bindsym $mod+d       exec wofi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
