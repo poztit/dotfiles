@@ -61,7 +61,7 @@ input "type:keyboard" {
 
 ### Style configuration
 
-smart_gaps on
+#smart_gaps on
 hide_edge_borders --i3 both
 default_border none
 default_floating_border none
