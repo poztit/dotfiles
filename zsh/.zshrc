@@ -43,6 +43,8 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#a89984"
+
 source ${HOME}/.profile
 
 # If running from tty1 start sway
