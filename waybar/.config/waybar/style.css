@@ -1,0 +1,71 @@
+* {
+        border:        none;
+        border-radius: 0;
+        font-family:   "Roboto", "FontAwesome 5 Free Solid", sans-serif;
+        font-size:     14px;
+        box-shadow:    none;
+        text-shadow:   none;
+        transition-duration: 0s;
+        color:      #ebdbb2;
+}
+
+window {
+        font-weight:    bold;
+        color:          #ebdbb2;
+        background:     #1d2021;
+}
+
+#workspaces {
+        margin: 0 5px;
+}
+
+#workspaces button {
+        padding: 0 4px;
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.focused {
+        background-color:       #458588;
+}
+
+#battery, #network, #pulseaudio, #clock, #custom-power, #custom-qbitstats {
+        margin:     0px 3px 0px 1px;
+        min-width:  10px;
+}
+
+#clock {
+        margin:     0px 16px 0px 10px;
+        min-width:  10px;
+}
+
+#battery {
+        color:       #689d6a;
+}
+
+#battery.critical {
+        color:          #cc241d;
+}
+
+#battery.good {
+        color:          #689d6a;
+}
+
+#battery.charging {
+        color:      #d79921;
+}
+
+/* 
+#network.wifi {
+        color:          #689d6a;
+}
+*/
+
+#network.disconnected {
+        color:          #cc241d; 
+}
+
+#waybar > box:nth-child(2) > box:nth-child(3) > * > label {
+        padding: 0 3px;
+}
