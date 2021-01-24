@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yggdroot/indentline'
 
 """ List ends here. Plugins becom visible to Neovim after this call.
 call plug#end()
@@ -52,10 +53,6 @@ set encoding=utf-8
 
 set smartindent
 set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set noexpandtab
 
 " Indentation level indicator
 let g:indentLine_char = '|'
