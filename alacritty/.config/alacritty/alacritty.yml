@@ -7,6 +7,8 @@ font:
     family: FiraMono Nerd Font
     style: Bold
 
+background_opacity: 1.0
+
 # Colors (Hybrid)
 colors:
   # Default colors
