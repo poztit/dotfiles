@@ -3,9 +3,9 @@ local map = vim.api.nvim_set_keymap
 map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
-options = { noremap = true }
+local options = { noremap = true }
 
-map('n', '<leader>ff', ':Telescope find_files<cr>', options)
+map('n', '<leader>ff', ':Telescope find_files hidden=true no_ignore=true<cr>', options)
 map('n', '<leader>fb', ':Telescope buffers<cr>', options)
 map('n', '<leader>f/', ':Telescope live_grep<cr>', options)
 map('n', '<leader>bc', ':BufferClose<cr>', options)
