@@ -1,5 +1,5 @@
 # Dotfiles gitignore
 
 ## Neovim
-nvim/.config/nvim/plugged
 .netrwhist
+nvim/.config/nvim/plugin
