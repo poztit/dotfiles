@@ -6,6 +6,16 @@ vim.cmd('colorscheme tokyonight')
 vim.cmd('set nocompatible')
 vim.g.tokyonight_italic_functions = true
 vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 8 
+vim.o.softtabstop = 8 
+vim.o.tabstop = 8 
+
+vim.opt.list = true
+vim.opt.fillchars = { eob = "–", fold = " ", vert = "│", foldsep = " ", foldclose = "", foldopen = "" }
+vim.opt.listchars:append({ tab = " ", lead = "·", trail = "·", eol = "﬋" })
+
 vim.o.background = 'dark'
 vim.o.breakindent = true
 vim.o.clipboard = 'unnamedplus'
@@ -30,7 +40,7 @@ require('lualine').setup({
 })
 
 require('nvim-treesitter.configs').setup({
-	ensure_installed = "maintained",
+	ensure_installed = "all",
 	sync_install = false,
 	highlight = {
 		enable = true
@@ -65,4 +75,10 @@ end)
 
 require('nvim-autopairs').setup({
 	check_ts = true,
+})
+
+require('telescope').setup({
+	defaults = {
+		file_ignore_patterns = { "^%.git/" }
+	}
 })

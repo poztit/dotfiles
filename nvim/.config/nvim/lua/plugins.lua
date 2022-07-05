@@ -36,6 +36,7 @@ require('packer').startup(function()
 	use 'folke/tokyonight.nvim'
 	use { -- UI to select things (files, search results, open buffers...)
 		'nvim-telescope/telescope.nvim',
+                tag = "nvim-0.6",
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
 	use { -- A bar that will show at the top of you nvim containing your open buffers. Similarly to how other editors show tabs with open files.
@@ -66,3 +67,4 @@ require('packer').startup(function()
 	}
 end)
 
+require("nvim-treesitter.install").prefer_git = true
