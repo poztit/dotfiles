@@ -51,3 +51,5 @@ source ${HOME}/.zsh/ohmyzsh/lib/history.zsh
 
 # Launch starship
 eval "$(starship init zsh)"
+
+if [ -e /home/illien/.nix-profile/etc/profile.d/nix.sh ]; then . /home/illien/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
