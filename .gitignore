@@ -1,5 +1,13 @@
 # Dotfiles gitignore
 
+# Default
+*sync-conflict*
+
 ## Neovim
 .netrwhist
 nvim/.config/nvim/plugin
+
+## Emacs
+/emacs/.config/emacs/*
+!/emacs/.config/emacs/config.org
+!/emacs/.config/emacs/init.el
