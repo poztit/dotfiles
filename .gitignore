@@ -11,3 +11,6 @@ nvim/.config/nvim/plugin
 /emacs/.config/emacs/*
 !/emacs/.config/emacs/config.org
 !/emacs/.config/emacs/init.el
+
+## Password Store
+/password-store
