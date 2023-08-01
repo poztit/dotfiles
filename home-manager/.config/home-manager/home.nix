@@ -100,8 +100,11 @@ in {
     };
     git = {
       enable = true;
+      package = pkgs.gitAndTools.gitFull;
       userName = "François Illien";
       userEmail = "francois@illien.org";
+      signing.key = "DB5372EA1A0CAAD5206F966E1E5F31E85D6D31FB";
+      signing.signByDefault = true;
     };
     starship = {
       enable = true;
