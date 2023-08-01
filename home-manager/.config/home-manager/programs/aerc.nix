@@ -13,7 +13,6 @@
           threading-enabled = true;
           styleset-name = "modus";
         };
-        statusline.separator = " | ";
         viewer = {
           pager = "less -Rs";
           alternatives = "text/plain,text/html";
@@ -30,6 +29,20 @@
           "text/html" = "html | colorize";
           ".header" = "colorize";
         };
+        templates = {
+          quoted-reply = "quoted-reply";
+        };
+      };
+      templates = {
+        quoted-reply = ''
+          X-Mailer: aerc {{version}}
+
+          On {{dateFormat (.OriginalDate | toLocal) "Mon Jan _2 15:04:05 2006"}}, {{(index .OriginalFrom 0).Address}} wrote:
+          {{if eq .OriginalMIMEType "text/html"}}
+          {{exec `/usr/local/libexec/aerc/filters/html` .OriginalText | quote}}
+          {{else}}
+          {{wrap 100 .OriginalText | trimSignature | quote}}
+          {{end}}'';
       };
       stylesets.modus = ''
         *.default=true
