@@ -17,7 +17,7 @@ in {
     stateVersion = "22.11"; # Please read the comment before changing.
     sessionVariables = {
       EDITOR = "emacs";
-      BROWSER = "/usr/bin/firefox";
+      BROWSER = "brave";
       MOZ_ENABLE_WAYLAND = 1;
     };
     shellAliases = {
