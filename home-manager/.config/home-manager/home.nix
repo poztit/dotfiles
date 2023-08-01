@@ -147,4 +147,10 @@ in {
   };
 
   services.emacs.enable = true;
+  services.ssh-agent.enable = false;
+  services.gpg-agent = {
+    enable = true;
+    enableScDaemon = true;
+    enableSshSupport = true;
+  };
 }
