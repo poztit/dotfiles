@@ -66,6 +66,7 @@ in {
     evince
     node2nix
     pass
+    git-crypt
   ];
 
   fonts.fontconfig.enable = true;
