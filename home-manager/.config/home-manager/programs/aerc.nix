@@ -18,7 +18,7 @@
           alternatives = "text/plain,text/html";
         };
         compose = {
-          editor = "emacs -nw";
+          editor = "emacsclient";
           address-book-cmd = "/home/fillien/go/bin/cdc '%s'";
         };
         filters = {
