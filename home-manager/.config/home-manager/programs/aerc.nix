@@ -31,6 +31,7 @@
         };
         templates = {
           quoted-reply = "quoted-reply";
+          forwards = "forwards";
         };
       };
       templates = {
@@ -38,6 +39,16 @@
           X-Mailer: aerc {{version}}
 
           On {{dateFormat (.OriginalDate | toLocal) "Mon Jan _2 15:04:05 2006"}}, {{(index .OriginalFrom 0).Address}} wrote:
+          {{if eq .OriginalMIMEType "text/html"}}
+          {{exec `/usr/local/libexec/aerc/filters/html` .OriginalText | quote}}
+          {{else}}
+          {{wrap 100 .OriginalText | trimSignature | quote}}
+          {{end}}'';
+        forwards = ''
+          X-Mailer: aerc {{version}}
+
+          Forwarded message from {{(index .OriginalFrom 0).Address}} on {{dateFormat .OriginalDate "Mon Jan _2 15:04:05 2006"}}:
+          {{.OriginalText}}
           {{if eq .OriginalMIMEType "text/html"}}
           {{exec `/usr/local/libexec/aerc/filters/html` .OriginalText | quote}}
           {{else}}
