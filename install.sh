@@ -1,7 +1,5 @@
 #!/usr/bin/sh
 
-sudo apt-get install curl
-
 # Install Nix
 curl -L https://nixos.org/nix/install -o install.sh
 sh install.sh
