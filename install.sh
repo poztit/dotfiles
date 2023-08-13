@@ -4,8 +4,8 @@
 nix-env -iA cachix -f https://cachix.org/api/v1/install && cachix use nix-community
 
 # Copy dotfiles
-git clone https://github.com/poztit/dotfiles.git $HOME/.dotfiles
-stow --dir $HOME/.dotfiles -S home-manager emacs
+git clone https://github.com/poztit/dotfiles.git "$HOME/.dotfiles"
+stow -d "$HOME/.dotfiles" -S home-manager emacs
 
 # Install dotfiles
 nix run home-manager switch
