@@ -1,5 +1,9 @@
 # Install
 
+Install `curl`, `stow` and `nix` :
 ```bash
-wget -O - https://raw.githubusercontent.com/poztit/dotfiles/master/install.sh | bash
+sudo apt update && sudo apt install curl stow
+sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
+
+
