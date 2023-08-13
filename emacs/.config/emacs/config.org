@@ -218,21 +218,3 @@ Add some style to Org :
     :init
     (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
 #+end_src
-
-* Mail
-#+BEGIN_SRC emacs-lisp
-    (use-package notmuch
-      :init
-      (setq message-directory "~/Maildir"
-            notmuch-show-logo nil
-            ;; add Cc and Bcc headers to the message buffer
-            message-default-mail-headers "Cc: \nBcc: \n"
-            ;; postponed message is put in the following draft directory
-            message-auto-save-directory "~/mail/draft"
-            message-kill-buffer-on-exit t
-            ;; change the directory to store the sent mail
-            message-directory "~/mail/"
-            notmuch-search-oldest-first nil)
-      )
-#+END_SRC
-
