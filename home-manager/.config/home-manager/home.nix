@@ -14,7 +14,7 @@ in {
     # You should not change this value, even if you update Home Manager. If you do
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
-    stateVersion = "22.11"; # Please read the comment before changing.
+    stateVersion = "23.05"; # Please read the comment before changing.
     sessionVariables = {
       EDITOR = "emacs";
       BROWSER = "brave";
@@ -67,7 +67,17 @@ in {
     node2nix
     pass
     git-crypt
+    languagetool
+    lz4
+    mdcat
+    khard
   ];
+
+  xdg.configFile."khard/khard.conf".text = ''
+    [addressbooks]
+    [[personal]]
+    path = ~/Contacts/Personal/contacts
+  '';
 
   fonts.fontconfig.enable = true;
   targets.genericLinux.enable = true;
@@ -77,6 +87,29 @@ in {
     ./accounts/email.nix
   ];
 
+  accounts.contact = {
+    basePath = "Contacts";
+    accounts = {
+      "Personal" = {
+        local = {
+          type = "filesystem";
+          fileExt = ".vcf";
+        };
+        remote = {
+          url = "https://cloud.illien.org";
+          type = "carddav";
+          userName = "francois";
+          passwordCommand = ["pass" "personal-cloud"];
+        };
+        vdirsyncer = {
+          enable = true;
+          collections = ["contacts"];
+          conflictResolution = ["remote wins"];
+        };
+      };
+    };
+  };
+  
   programs = {
     home-manager.enable = true;    
     #firefox = {
@@ -94,6 +127,8 @@ in {
 	  #    };
     #  };
     #};
+
+    vdirsyncer.enable = true;
     
     emacs = {
       enable = true;
@@ -150,6 +185,7 @@ in {
     };
   };
 
+  services.vdirsyncer.enable = true;
   services.emacs.enable = true;
   services.ssh-agent.enable = false;
   services.gpg-agent = {

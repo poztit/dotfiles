@@ -18,8 +18,8 @@
           alternatives = "text/plain,text/html";
         };
         compose = {
-          editor = "emacsclient";
-          address-book-cmd = "/home/fillien/go/bin/cdc '%s'";
+          editor = "nvim";
+          address-book-cmd = "khard email --parsable --remove-first-line --search-in-source-files '%s'";
         };
         filters = {
           "text/plain" = "colorize";

@@ -48,6 +48,11 @@
       aerc = {
         enable = true;
         smtpAuth = null;
+        extraAccounts = {
+          archive = "INBOX.Archives";
+          postpone = "INBOX.Drafts";
+          copy-to = "INBOX.Sent";
+        };
       };
       folders = {
         drafts = "INBOX.Drafts";

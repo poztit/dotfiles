@@ -173,6 +173,24 @@ Use modus ligth and dark themes :
     (setq c-default-style "k&r")
     (setq c-basic-offset 8))
 #+end_src
+
+** Languagetool
+#+begin_src emacs-lisp
+  (use-package languagetool
+    :commands (languagetool-check
+               languagetool-clear-suggestions
+               languagetool-correct-at-point
+               languagetool-correct-buffer
+               languagetool-set-language
+               languagetool-server-mode
+               languagetool-server-start
+               languagetool-server-stop)
+    :config
+    (setq languagetool-java-bin "/usr/bin/java"
+          languagetool-console-command "~/.nix-profile/share/languagetool-commandline.jar"
+          languagetool-server-command "~/.nix-profile/share/languagetool-server.jar"))
+#+end_src
+
 * Org mode
 Configure Org :
 #+begin_src emacs-lisp
