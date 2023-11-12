@@ -7,12 +7,12 @@
       passwordCommand = "pass personal-email";
       primary = true;
       imap = {
-        host = "mail.gandi.net";
+        host = "mail.infomaniak.com";
         port = 993;
         tls.enable = true;
       };
       smtp = {
-        host = "mail.gandi.net";
+        host = "mail.infomaniak.com";
         port = 465;
         tls.enable = true;
       };
@@ -52,6 +52,7 @@
           archive = "INBOX.Archives";
           postpone = "INBOX.Drafts";
           copy-to = "INBOX.Sent";
+          signature-file = "/home/fillien/.config/aerc/univ-signature";
         };
       };
       folders = {

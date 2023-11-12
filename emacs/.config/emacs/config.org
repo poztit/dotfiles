@@ -221,6 +221,7 @@ Add some style to Org :
   (use-package racket-mode)
   (use-package cmake-mode)
   (use-package meson-mode)
+  (use-package ledger-mode)
   (use-package nix-mode
     :mode "\\.nix\\'")
   (use-package tex

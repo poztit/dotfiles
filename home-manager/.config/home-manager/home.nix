@@ -22,13 +22,13 @@ in {
     };
     shellAliases = {
       # Replace ls by exa
-      ls = "exa --sort type --classify";
-      l = "exa --sort type --classify";
-      ll = "exa --long --icons --sort type --classify";
-      lll = "exa --long --icons --all --sort type --classify";
-      la = "exa --all --sort type --classify";
-      lla = "exa --long --icons --all --sort type --classify";
-      lt = "exa --tree --sort type";
+      ls = "eza --sort type --classify";
+      l = "eza --sort type --classify";
+      ll = "eza --long --icons --sort type --classify";
+      lll = "eza --long --icons --all --sort type --classify";
+      la = "eza --all --sort type --classify";
+      lla = "eza --long --icons --all --sort type --classify";
+      lt = "eza --tree --sort type";
 
       # Cat with syntax highlighting
       ccat = "pygmentize -g -O style=stata-dark,linenos=1";
@@ -36,17 +36,21 @@ in {
       # Use Neovim in place of Vim
       vim = "nvim";
     };
+    sessionPath = ["$HOME/univ-nantes/tools" "$HOME/univ-nantes/thèse/tools"];
   };
   
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
+
+   home.packages = with pkgs; [
     fira
     source-code-pro
     source-sans-pro
     (nerdfonts.override { fonts = ["FiraCode" "FantasqueSansMono"]; })
 
-    exa
+    ledger
+    hledger
+    eza
     gnome.gnome-settings-daemon
     gnome.gnome-backgrounds
     gnome.gnome-clocks
@@ -78,6 +82,12 @@ in {
     [[personal]]
     path = ~/Contacts/Personal/contacts
   '';
+
+  xdg.configFile."aerc/univ-signature".source = ./accounts/univ-signature.txt;
+  xdg.configFile."plasma-workspace/env/hm-session-vars.sh".text = ''
+    . "${config.home.profileDirectory}/etc/profile.d/hm-session-vars.sh"
+  '';
+
 
   fonts.fontconfig.enable = true;
   targets.genericLinux.enable = true;
@@ -128,7 +138,7 @@ in {
     #  };
     #};
 
-    vdirsyncer.enable = true;
+    #vdirsyncer.enable = false;
     
     emacs = {
       enable = true;
@@ -185,7 +195,7 @@ in {
     };
   };
 
-  services.vdirsyncer.enable = true;
+  #services.vdirsyncer.enable = true;
   services.emacs.enable = true;
   services.ssh-agent.enable = false;
   services.gpg-agent = {
